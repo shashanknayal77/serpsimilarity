@@ -135,7 +135,7 @@ st.title("SERP Keyword Comparison")
 
 with st.expander("Instructions"):
     st.subheader("Sample Results:")
-    st.image("C:/Users/HP/OneDrive/Desktop/Office/serpcrawl/Screenshot 2024-06-24 111449 (3).png")
+    st.image("serpcrawl/Screenshot 2024-06-24 111449 (3).png")
 # Get API key from the user
 api_key = st.text_input("Enter your SerpAPI key:", type="password")
 
