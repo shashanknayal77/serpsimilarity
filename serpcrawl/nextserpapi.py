@@ -1,5 +1,5 @@
 import streamlit as st
-from serpapi.search import GoogleSearch
+from serpapi import GoogleSearch
 from urllib.parse import urlparse
 import random
 import requests
