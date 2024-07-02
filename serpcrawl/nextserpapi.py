@@ -1,11 +1,10 @@
 import streamlit as st
-from serpapi import GoogleSearch
+from serpapi import search
 from urllib.parse import urlparse
 import random
 import requests
 
 # streamlit run nextserpapi.py     commans
-
 # Function to validate the SerpAPI key
 def validate_api_key(api_key):
     params = {
@@ -27,13 +26,12 @@ def compare_keywords(keyword1, keyword2, api_key):
     }
 
     # Perform search for the first keyword
-    search = GoogleSearch(params)
-    results1 = search.get_dict()
+   # Perform search for the first keyword
+    results1 = search(params)
 
     # Perform search for the second keyword
     params["q"] = keyword2
-    search = GoogleSearch(params)
-    results2 = search.get_dict()
+    results2 = search(params)
 
     # Extract URLs from search results
     urls1 = [result.get("link") for result in results1.get("organic_results", [])]
@@ -135,7 +133,7 @@ st.title("SERP Keyword Comparison")
 
 with st.expander("Instructions"):
     st.subheader("Sample Results:")
-    st.image("serpcrawl/Screenshot 2024-06-24 111449 (3).png")
+    st.image("C:/Users/HP/OneDrive/Desktop/Office/serpcrawl/Screenshot 2024-06-24 111449 (3).png")
 # Get API key from the user
 api_key = st.text_input("Enter your SerpAPI key:", type="password")
 
@@ -155,3 +153,4 @@ if st.button("Compare"):
             st.warning("SerpAPI key is missing or invalid.")
     else:
         st.warning("Please enter the API key and both keywords to compare.")
+
